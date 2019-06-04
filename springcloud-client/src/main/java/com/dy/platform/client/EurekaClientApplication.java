@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EurekaClientApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaClientApplication.class, args); 
+		SpringApplication.run(EurekaClientApplication.class, args);
 	}
 	
 	@Value("${server.port}")
@@ -22,6 +22,7 @@ public class EurekaClientApplication {
 	
 	@RequestMapping("/hi")
 	public String home(@RequestParam(value = "name", defaultValue = "forezp") String name){
+		System.out.println("hi");
 		return "hello world"+name+" from port " + port;
 	}
 	
